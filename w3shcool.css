@@ -1,15 +1,52 @@
-.box {
+.container {
     display: -webkit-flex;
-    flex-wrap: wrap;
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    border: 1px solid rgb(151, 17, 230);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-.item {
-    width: 28px;
-    height: 28px;
-    border-radius: 100%;
-    background-color: #000000;
+header, footer {
+    flex: 1;
+}
+
+header {
+    background-color: rgb(122, 121, 121);
+}
+
+.container-body {
+    display: -webkit-flex;
+    display: flex;
+    flex: 1;
+}
+
+main {
+    flex: 1;
+    background-color: rgb(212, 243, 154);
+}
+
+nav {
+    /* order: -1; */
+    background-color: rgb(23, 199, 243);
+}
+
+aside {
+    background-color: rgb(13, 129, 224);
+}
+
+footer {
+    background-color: rgb(12, 12, 12);
+}
+
+nav, aside {
+    flex: 0 0 12em;
+}
+
+@media  (max-width: 768px) {
+    .container-body {
+        flex-direction: column;
+        flex: 1;
+    }
+    nav, aside, main {
+        flex: auto;
+    }
 }
